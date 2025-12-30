@@ -1,0 +1,118 @@
+
+import { User, Bike, Route, Article, BikeCategory, BikeCondition } from '../types';
+
+export const mockUsers: User[] = [
+  { id: 'user-1', name: 'Juan Pérez', email: 'juan.perez@example.com', phone: '555-123-4567', location: 'Ciudad de México' },
+  { id: 'user-2', name: 'Maria García', email: 'maria.garcia@example.com', phone: '555-987-6543', location: 'Guadalajara' },
+];
+
+export const mockBikes: Bike[] = [
+  {
+    id: 'bike-1',
+    title: 'Bicicleta de Montaña Specialized Rockhopper',
+    description: 'Perfecta para senderos y terracería. Muy poco uso, como nueva. Se vende por falta de espacio. Incluye portabidón y bomba de aire.',
+    category: BikeCategory.MOUNTAIN,
+    brand: 'Specialized',
+    model: 'Rockhopper Comp 29',
+    frameSize: 'M',
+    condition: BikeCondition.EXCELLENT,
+    price: 850,
+    location: 'Ciudad de México',
+    images: ['https://picsum.photos/seed/bike1/800/600', 'https://picsum.photos/seed/bike1_2/800/600', 'https://picsum.photos/seed/bike1_3/800/600'],
+    sellerId: 'user-1',
+    postedDate: '2024-07-20',
+  },
+  {
+    id: 'bike-2',
+    title: 'Bicicleta de Carretera Trek Domane AL 2',
+    description: 'Ideal para largas distancias y entrenamiento. Cuadro de aluminio ligero y horquilla de carbono. Transmisión Shimano Claris de 8 velocidades.',
+    category: BikeCategory.ROAD,
+    brand: 'Trek',
+    model: 'Domane AL 2',
+    frameSize: '54cm',
+    condition: BikeCondition.GOOD,
+    price: 600,
+    location: 'Monterrey',
+    images: ['https://picsum.photos/seed/bike2/800/600', 'https://picsum.photos/seed/bike2_2/800/600'],
+    sellerId: 'user-2',
+    postedDate: '2024-07-18',
+  },
+  {
+    id: 'bike-3',
+    title: 'Bicicleta Urbana Schwinn',
+    description: 'Clásica y cómoda para la ciudad. Con canasta frontal y parrilla trasera. Perfecta para ir al trabajo o de paseo.',
+    category: BikeCategory.URBAN,
+    brand: 'Schwinn',
+    model: 'Wayfarer',
+    frameSize: 'L',
+    condition: BikeCondition.GOOD,
+    price: 250,
+    location: 'Guadalajara',
+    images: ['https://picsum.photos/seed/bike3/800/600'],
+    sellerId: 'user-2',
+    postedDate: '2024-07-21',
+  },
+   {
+    id: 'bike-4',
+    title: 'Bici Eléctrica Rad Power Bikes RadCity 5',
+    description: 'Potente y versátil, ideal para commutes largos o subir cuestas sin esfuerzo. Batería de larga duración y motor de 750W. Como nueva.',
+    category: BikeCategory.ELECTRIC,
+    brand: 'Rad Power Bikes',
+    model: 'RadCity 5 Plus',
+    frameSize: 'Única',
+    condition: BikeCondition.EXCELLENT,
+    price: 1500,
+    location: 'Ciudad de México',
+    images: ['https://picsum.photos/seed/bike4/800/600', 'https://picsum.photos/seed/bike4_2/800/600'],
+    sellerId: 'user-1',
+    postedDate: '2024-07-22',
+  },
+];
+
+export const mockRoutes: Route[] = [
+  {
+    id: 'route-1',
+    name: 'Circuito Desierto de los Leones',
+    distance: 25,
+    location: 'Ciudad de México',
+    shortDescription: 'Una ruta escénica con subidas desafiantes y vistas increíbles.',
+    fullDescription: 'Este clásico del ciclismo de la CDMX ofrece un reto para ciclistas de montaña y de ruta. El recorrido principal es pavimentado, pero existen múltiples senderos para explorar. La altitud y las pendientes constantes pondrán a prueba tu condición física.',
+    elevation: 600,
+    mapEmbedUrl: 'https://www.openstreetmap.org/export/embed.html?bbox=-99.3244%2C19.3069%2C-99.2844%2C19.3269&layer=cyclemap',
+    pointsOfInterest: ['Ex-convento del Desierto de los Leones', 'Mirador de La Venta', 'Valle de las Monjas'],
+    image: 'https://picsum.photos/seed/route1/800/500',
+  },
+  {
+    id: 'route-2',
+    name: 'Vía Recreactiva Guadalajara',
+    distance: 30,
+    location: 'Guadalajara',
+    shortDescription: 'Paseo urbano dominical por las principales avenidas de la ciudad.',
+    fullDescription: 'Cada domingo, las principales avenidas de Guadalajara se cierran al tráfico motorizado para dar paso a ciclistas, patinadores y peatones. Es una ruta plana y segura, ideal para familias y principiantes.',
+    elevation: 50,
+    mapEmbedUrl: 'https://www.openstreetmap.org/export/embed.html?bbox=-103.40%2C20.65%2C-103.30%2C20.70&layer=mapnik',
+    pointsOfInterest: ['Glorieta Minerva', 'Arcos de Guadalajara', 'Parque Metropolitano'],
+    image: 'https://picsum.photos/seed/route2/800/500',
+  },
+];
+
+export const mockArticles: Article[] = [
+  {
+    id: 'article-1',
+    title: '5 Consejos Esenciales de Seguridad para Ciclistas Urbanos',
+    category: 'Seguridad',
+    author: 'Equipo Página Ciclismo',
+    publishDate: '2024-06-15',
+    content: 'Andar en bicicleta por la ciudad es una experiencia liberadora, pero la seguridad es primordial. 1. **Hazte visible:** Usa luces delanteras y traseras, incluso de día. Viste ropa de colores brillantes. 2. **Usa casco siempre:** No es negociable. Un buen casco puede salvarte la vida. 3. **Respeta las señales de tránsito:** Eres un vehículo más en la vía. Detente en los semáforos y respeta los cruces peatonales. 4. **Comunícate:** Usa señales manuales para indicar tus giros y mantén contacto visual con los conductores. 5. **Mantén tu distancia:** No te pegues demasiado a los autos estacionados para evitar el "dooring" (que te abran la puerta).',
+    featuredImage: 'https://picsum.photos/seed/article1/800/450',
+  },
+  {
+    id: 'article-2',
+    title: 'Guía para Elegir tu Primera Bicicleta de Carretera',
+    category: 'Equipo',
+    author: 'Ana Rueda',
+    publishDate: '2024-07-01',
+    content: 'Elegir tu primera bicicleta de carretera puede ser abrumador. Aquí te dejamos los puntos clave. **Material del cuadro:** El aluminio es una excelente opción para empezar por su balance entre peso, rigidez y costo. El carbono es más ligero y cómodo, pero más caro. **Grupo de transmisión:** Shimano (Claris, Sora, Tiagra) y SRAM (Apex) son grupos de entrada confiables y duraderos. **Talla correcta:** Es el factor más importante. Acude a una tienda especializada para un "bike fit" o usa calculadoras en línea como guía inicial. Una talla incorrecta puede causar incomodidad y lesiones. **Tipo de frenos:** Los frenos de disco ofrecen mejor rendimiento en todas las condiciones climáticas, mientras que los de llanta son más ligeros y fáciles de mantener.',
+    featuredImage: 'https://picsum.photos/seed/article2/800/450',
+  },
+];
